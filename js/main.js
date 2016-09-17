@@ -27,7 +27,49 @@ var GameState = {
     this.background.inputEnabled = true;
     this.background.events.onInputDown.add(this.placeItem, this);
 
-    this.pet = this.game.add.sprite(100, 400, 'pet',0);
+    this.pet = this.game.add.sprite(180, 400, 'pet',0);
+    //this.pet.to({100: 200, 400: 500}, 700);
+
+    
+    //this.pet = this.game.add.sprite(100, 400, 'pet',0)
+    //sleep(20000);
+    
+/*    function sleep(milliseconds) {
+      var start = new Date().getTime();
+      for (var i = 0; i < 1e7; i++) {
+        if ((new Date().getTime() - start) > milliseconds){
+          break;
+        }
+      }
+    }*/
+    
+    //game.add.tween(this.pet).to({x: 300, y: 180}, 700).start();
+    
+    //sleep(20000);
+    //setTimeout(function(){ game.add.tween(this.pet).to({x: 180, y: 100}, 700).start(); }, 3000);
+    
+    // function sleep(milliseconds) {
+    //   var start = new Date().getTime();
+    //   for (var i = 0; i < 1e7; i++) {
+    //     if ((new Date().getTime() - start) > milliseconds){
+    //       break;
+    //     }
+    //   }
+    // }   
+    //game.add.tween(this.pet).to({x: 180, y: 400}, 700).start();
+
+    //game.add.tween(this.pet).to({x: 300, y: 180}, 700).start();
+    game.add.tween(this.pet).to({x: 180, y: 50}, 700).start();
+
+
+
+    /*myFunction() 
+    function myFunction() {
+    setTimeout(function(){ game.add.tween(this.pet).to({x: 180, y: 50}, 700).start(); }, 30);
+    }*/
+
+    
+    
     this.pet.animations.add('funnyfaces', [0, 1, 2, 3, 2, 1, 0], 7, false);
     this.pet.anchor.setTo(0.5);
 
@@ -44,6 +86,8 @@ var GameState = {
     this.apple.customParams = {health: 20, fun: 10};
     this.apple.inputEnabled = true;
     this.apple.events.onInputDown.add(this.pickItem, this);
+    
+    //this.selectedItem = apple;
 
     this.candy = this.game.add.sprite(144, 570, 'candy');
     this.candy.anchor.setTo(0.5);
@@ -164,7 +208,7 @@ var GameState = {
         this.refreshStats();
 
         //clear selection
-        this.clearSelection();
+        //this.clearSelection();
       }, this);
       petMovement.start();      
     }
